@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-space-mono);
+  --font-heading: var(--font-orbitron);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -18,11 +18,6 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -46,75 +41,50 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Sculpted Sciences brand tokens */
+  --ss-blue: #0088ff;
+  --ss-cyan: #00d4ff;
+  --ss-blue-dim: rgba(0, 136, 255, 0.15);
+  --ss-cyan-dim: rgba(0, 212, 255, 0.1);
+  --ss-silver: #8090a0;
+  --ss-silver-light: #b8cce0;
+  --ss-bg-deep: #04080f;
+  --ss-bg: #06101e;
+  --ss-bg-card: #0a1628;
+  --ss-border: rgba(0, 136, 255, 0.2);
+  --ss-glow: 0 0 40px rgba(0, 136, 255, 0.3);
+  --ss-glow-strong: 0 0 80px rgba(0, 136, 255, 0.5);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: oklch(0.05 0.015 240);
+  --foreground: oklch(0.93 0.006 220);
+  --card: oklch(0.08 0.018 240);
+  --card-foreground: oklch(0.93 0.006 220);
+  --popover: oklch(0.08 0.018 240);
+  --popover-foreground: oklch(0.93 0.006 220);
+  --primary: oklch(0.56 0.22 250);
+  --primary-foreground: oklch(0.98 0.002 240);
+  --secondary: oklch(0.12 0.02 240);
+  --secondary-foreground: oklch(0.85 0.01 220);
+  --muted: oklch(0.12 0.015 240);
+  --muted-foreground: oklch(0.58 0.015 220);
+  --accent: oklch(0.15 0.025 240);
+  --accent-foreground: oklch(0.93 0.006 220);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: oklch(0.56 0.22 250 / 20%);
+  --input: oklch(0.12 0.02 240);
+  --ring: oklch(0.56 0.22 250);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.08 0.018 240);
+  --sidebar-foreground: oklch(0.93 0.006 220);
+  --sidebar-primary: oklch(0.56 0.22 250);
+  --sidebar-primary-foreground: oklch(0.98 0.002 240);
+  --sidebar-accent: oklch(0.12 0.02 240);
+  --sidebar-accent-foreground: oklch(0.93 0.006 220);
+  --sidebar-border: oklch(0.56 0.22 250 / 20%);
+  --sidebar-ring: oklch(0.56 0.22 250);
 }
 
 @layer base {
@@ -123,8 +93,170 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
   }
-  html {
-    @apply font-sans;
+  h1, h2, h3 {
+    font-family: var(--font-orbitron), system-ui, sans-serif;
   }
+}
+
+/* Sculpted Sciences animations */
+@keyframes pulse-blue {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 136, 255, 0.3); }
+  50% { box-shadow: 0 0 60px rgba(0, 136, 255, 0.6), 0 0 120px rgba(0, 212, 255, 0.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes draw-in {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes counter-tick {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ss-gradient-text {
+  background: linear-gradient(135deg, #0088ff, #00d4ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ss-shimmer-text {
+  background: linear-gradient(90deg, #0088ff 0%, #00d4ff 30%, #ffffff 50%, #00d4ff 70%, #0088ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.ss-card-hover {
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0, 136, 255, 0.15);
+}
+
+.ss-card-hover:hover {
+  border-color: rgba(0, 136, 255, 0.5);
+  box-shadow: 0 0 40px rgba(0, 136, 255, 0.2), inset 0 0 40px rgba(0, 136, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+.ss-btn-primary {
+  position: relative;
+  background: linear-gradient(135deg, #0055cc, #0088ff);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  color: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ss-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ss-btn-primary:hover::before {
+  opacity: 1;
+}
+
+.ss-btn-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 136, 255, 0.5);
+}
+
+.ss-btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 136, 255, 0.35);
+  color: rgba(0, 212, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.ss-btn-ghost:hover {
+  background: rgba(0, 136, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.6);
+  color: #00d4ff;
+}
+
+.hex-grid {
+  background-image:
+    linear-gradient(rgba(0, 136, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 136, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.dna-bg {
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(0, 100, 220, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(0, 180, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 50, 150, 0.15) 0%, transparent 60%);
+}
+
+.dither-pattern {
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(0, 136, 255, 0.3) 1px, rgba(0, 136, 255, 0.3) 2px),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(0, 136, 255, 0.3) 1px, rgba(0, 136, 255, 0.3) 2px);
+  background-size: 3px 3px;
+}
+
+.stars-bg {
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(0, 212, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 25% 55%, white, transparent),
+    radial-gradient(1px 1px at 40% 25%, rgba(0, 136, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 60% 80%, white, transparent),
+    radial-gradient(1px 1px at 75% 45%, rgba(0, 212, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 85% 20%, white, transparent),
+    radial-gradient(1px 1px at 90% 65%, rgba(0, 136, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 15% 80%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(0, 212, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 70% 10%, white, transparent);
+  background-size: 200% 200%;
+  opacity: 0.4;
 }
