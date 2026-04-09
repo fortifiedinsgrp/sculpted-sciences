@@ -111,20 +111,23 @@ export default function HeroAscii() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#04080f]">
-      {/* Unicorn Studio animation — all screens, requires WebGL */}
+    <section className="overflow-hidden bg-[#04080f] flex flex-col lg:block lg:relative lg:min-h-screen">
+
+      {/* ── Animation ──────────────────────────────────────────
+          Mobile:  in-flow block, 55vh tall, above the text
+          Desktop: absolute full-screen background             */}
       {webglSupported && (
-        <div className="absolute inset-0 w-full h-full">
+        <div className="relative w-full h-[55vh] shrink-0 lg:absolute lg:inset-0 lg:h-full lg:w-full">
           <div
             data-us-project="whwOGlfJ5Rz2rHaEUgHl"
-            style={{ width: '100%', height: '100%', minHeight: '100vh' }}
+            style={{ width: '100%', height: '100%' }}
           />
         </div>
       )}
 
-      {/* CSS fallback when WebGL is unavailable */}
+      {/* CSS fallback — same responsive sizing */}
       {!webglSupported && (
-        <div className="absolute inset-0 w-full h-full dna-bg">
+        <div className="relative w-full h-[55vh] shrink-0 lg:absolute lg:inset-0 lg:h-full dna-bg">
           <div className="stars-bg absolute inset-0" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0044aa]/10 to-[#04080f]" />
         </div>
@@ -173,15 +176,17 @@ export default function HeroAscii() {
         </div>
       </div>
 
-      {/* ── Corner Frame Accents ── */}
-      <div className="absolute top-0 left-0 w-8 h-8 lg:w-14 lg:h-14 border-t-2 border-l-2 border-[#0088ff]/30 z-10" />
-      <div className="absolute top-0 right-0 w-8 h-8 lg:w-14 lg:h-14 border-t-2 border-r-2 border-[#0088ff]/30 z-10" />
-      <div className="absolute bottom-[5vh] left-0 w-8 h-8 lg:w-14 lg:h-14 border-b-2 border-l-2 border-[#0088ff]/30 z-10" />
-      <div className="absolute bottom-[5vh] right-0 w-8 h-8 lg:w-14 lg:h-14 border-b-2 border-r-2 border-[#0088ff]/30 z-10" />
+      {/* ── Corner Frame Accents — desktop only ── */}
+      <div className="hidden lg:block absolute top-0 left-0 w-14 h-14 border-t-2 border-l-2 border-[#0088ff]/30 z-10" />
+      <div className="hidden lg:block absolute top-0 right-0 w-14 h-14 border-t-2 border-r-2 border-[#0088ff]/30 z-10" />
+      <div className="hidden lg:block absolute bottom-[5vh] left-0 w-14 h-14 border-b-2 border-l-2 border-[#0088ff]/30 z-10" />
+      <div className="hidden lg:block absolute bottom-[5vh] right-0 w-14 h-14 border-b-2 border-r-2 border-[#0088ff]/30 z-10" />
 
-      {/* ── Hero Content ── */}
-      <div className="relative z-10 flex min-h-screen items-center pt-16 lg:pt-0" style={{ marginTop: '5vh' }}>
-        <div className="container mx-auto px-6 lg:px-16 lg:ml-[8%]">
+      {/* ── Hero Content ──────────────────────────────────────
+          Mobile:  in-flow below the animation block
+          Desktop: absolute-positioned, vertically centred     */}
+      <div className="relative z-10 px-6 pt-8 pb-12 lg:flex lg:min-h-screen lg:items-center lg:pt-0 lg:px-16 lg:ml-[8%]" style={{ marginTop: '0' }}>
+        <div className="lg:container lg:mx-auto">
           <div className="max-w-xl relative">
 
             {/* Index line */}
@@ -240,32 +245,26 @@ export default function HeroAscii() {
         </div>
       </div>
 
-      {/* ── Bottom Status Bar ── */}
-      <div className="absolute left-0 right-0 z-20 border-t border-[#0088ff]/15 bg-[#04080f]/60 backdrop-blur-sm" style={{ bottom: '5vh' }}>
-        <div className="container mx-auto px-4 lg:px-8 py-2 lg:py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3 lg:gap-6 text-[8px] lg:text-[9px] font-[family-name:var(--font-space-mono)] text-[#0088ff]/50">
-            <span className="hidden lg:inline text-[#00d4ff]/60">SYSTEM.ACTIVE</span>
-            <span className="lg:hidden text-[#00d4ff]/60">SYS.ACT</span>
-            <div className="hidden lg:flex gap-0.5">
+      {/* ── Bottom Status Bar — desktop only ── */}
+      <div className="hidden lg:block absolute left-0 right-0 z-20 border-t border-[#0088ff]/15 bg-[#04080f]/60 backdrop-blur-sm" style={{ bottom: '5vh' }}>
+        <div className="container mx-auto px-8 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-6 text-[9px] font-[family-name:var(--font-space-mono)] text-[#0088ff]/50">
+            <span className="text-[#00d4ff]/60">SYSTEM.ACTIVE</span>
+            <div className="flex gap-0.5">
               {[8, 14, 6, 12, 10, 16, 8, 11].map((h, i) => (
-                <div
-                  key={i}
-                  className="w-1 bg-[#0088ff]/40"
-                  style={{ height: `${h}px` }}
-                />
+                <div key={i} className="w-1 bg-[#0088ff]/40" style={{ height: `${h}px` }} />
               ))}
             </div>
             <span>V1.0.0</span>
           </div>
-
-          <div className="flex items-center gap-2 lg:gap-4 text-[8px] lg:text-[9px] font-[family-name:var(--font-space-mono)] text-[#0088ff]/50">
-            <span className="hidden lg:inline">◑ PROTOCOLS READY</span>
+          <div className="flex items-center gap-4 text-[9px] font-[family-name:var(--font-space-mono)] text-[#0088ff]/50">
+            <span>◑ PROTOCOLS READY</span>
             <div className="flex gap-1">
               <div className="w-1 h-1 bg-[#00d4ff]/70 rounded-full animate-pulse" />
               <div className="w-1 h-1 bg-[#0088ff]/50 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
               <div className="w-1 h-1 bg-[#0088ff]/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
             </div>
-            <span className="hidden lg:inline">FRAME: ∞</span>
+            <span>FRAME: ∞</span>
           </div>
         </div>
       </div>
