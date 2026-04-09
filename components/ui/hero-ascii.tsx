@@ -112,9 +112,9 @@ export default function HeroAscii() {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#04080f]">
-      {/* Vitruvian man animation — desktop only, requires WebGL */}
+      {/* Unicorn Studio animation — all screens, requires WebGL */}
       {webglSupported && (
-        <div className="absolute inset-0 w-full h-full hidden lg:block">
+        <div className="absolute inset-0 w-full h-full">
           <div
             data-us-project="whwOGlfJ5Rz2rHaEUgHl"
             style={{ width: '100%', height: '100%', minHeight: '100vh' }}
@@ -122,22 +122,16 @@ export default function HeroAscii() {
         </div>
       )}
 
-      {/* Desktop fallback when WebGL is unavailable */}
+      {/* CSS fallback when WebGL is unavailable */}
       {!webglSupported && (
-        <div className="absolute inset-0 w-full h-full hidden lg:block dna-bg">
+        <div className="absolute inset-0 w-full h-full dna-bg">
           <div className="stars-bg absolute inset-0" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0044aa]/10 to-[#04080f]" />
         </div>
       )}
 
-      {/* Mobile stars / glow background */}
-      <div className="absolute inset-0 w-full h-full lg:hidden dna-bg">
-        <div className="stars-bg absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0044aa]/10 to-[#04080f]" />
-      </div>
-
       {/* Ambient glow overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#04080f]/80 via-transparent to-transparent pointer-events-none hidden lg:block" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#04080f]/80 via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#04080f] to-transparent pointer-events-none" />
 
       {/* ── Top Nav Bar ── */}
